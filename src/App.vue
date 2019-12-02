@@ -3,7 +3,7 @@
     <img v-bind:style="{width: '100px', height: '100px', border: '2px solid seagreen', borderRadius: '100px', padding: '10px'}" alt="Vue logo" src="./assets/logo.png">
     <h1>Welcome to Your Vue.js App</h1>
     <VueInfo title="I love vue"/>
-    <HelloWorld v-bind:todos="todos" v-bind:vInfo="vInfo"/>
+    <HelloWorld v-bind:todos="todos" v-bind:vInfo="vInfo" @againClickCalled="punchMe"/>
   </div>
 </template>
 
@@ -15,6 +15,11 @@ export default {
   components: {
     HelloWorld,
     VueInfo
+  },
+  methods: {
+    punchMe(inputValue) {     
+      alert(inputValue)
+    }
   },
   data() {
   return {
